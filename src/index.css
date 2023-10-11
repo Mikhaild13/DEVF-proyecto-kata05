@@ -1,0 +1,13 @@
+* {
+  background-color: black;
+  box-sizing: border-box;
+}
+
+.films {
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+.films div {
+  margin: 10px;
+}

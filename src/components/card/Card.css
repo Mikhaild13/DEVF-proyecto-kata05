@@ -1,0 +1,12 @@
+* {
+  color: red;
+  margin: 0;
+}
+
+.thumbnail {
+  max-width: 300px;
+}
+
+.card-style {
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.308);
+}
