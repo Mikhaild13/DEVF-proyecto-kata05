@@ -1,48 +1,42 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Card from './components/card/Card'
-import Menu from './components/menu/Menu'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Home from './components/home/Home'
+import Movies from './components/movies/Movies'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 
-const films =[
+const routes = createBrowserRouter([
   {
-    title: 'película 1',
-    desc:'esta es la película 1',
-    length: '100 min'
-  },
-  {
-    title: 'película 2',
-    desc:'esta es la película 2',
-    length: '105 min'
-  },
-  {
-    title: 'película 3',
-    desc:'esta es la película 3',
-    length: '110 min'
-  },
-  {
-    title: 'película 4',
-    desc:'esta es la película 4',
-    length: '115 min'
-  },
-  {
-    title: 'película 5',
-    desc:'esta es la película 5',
-    length: '120 min'
+    path: '/',
+    element: <Home/>,
+    errorElement: <h1>404 - ruta no encontrada</h1>,
+    children:[{
+      path:'/',
+      element: <Movies/>
+      },{
+        path:'/series',
+        element: <h1>Series</h1>
+      },{
+        path:'/peliculas',
+        element: <h1>Películas</h1>
+      },{
+        path:'/novedades-populares',
+        element: <h1>Novedades populares</h1>
+      },{
+        path:'/mi-lista',
+        element: <h1>Mi Lista</h1>
+      },{
+        path:'/explora-por-idiomas',
+        element: <h1>Explora por idiomas</h1>
+      }]
   }
-]
+])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Menu/>
-    <section className='films'>
-      {
-        films.map((movie, index) => {
-          return <Card movie={movie} key={index}/>
-        })
-      }
-    </section>
+    <RouterProvider router={routes}/>
   </React.StrictMode>,
 )
 
-//2:14:00 - 19-09-2023
+//01:22:00 - 03-10-2023
