@@ -12,7 +12,7 @@ export default function Card(props) {
   return (
     <>
     <div className='card-style'>
-      <img className='thumbnail' src='https://www.dondeir.com/wp-content/uploads/2022/06/volver-al-futuro-musical.jpg'/>
+      <img className='thumbnail' src={props.movie.portada}/>
         <div className="container mx-0">
           <div className="row">
             <div className="col m-0 p-0">
